@@ -2,6 +2,7 @@
 //https://pokemon.gameinfo.io
 //outfile:NAME_INDEX.js
 /*===========================================================================================*/
+//1st
 var get_name_promise = [];
 get_name_promise.push(getPokemonNameList("https://pokemon.gameinfo.io"));
 get_name_promise.push(getAttackNameList("https://pokemon.gameinfo.io/en/moves"));
@@ -51,6 +52,7 @@ function getAttackNameList(url){
 	}));
 }
 
+//2nd
 var name_maps = {};
 var gap = name_list.length/2;
 for(var i = 0 ; i < gap ; i++){
@@ -58,3 +60,5 @@ for(var i = 0 ; i < gap ; i++){
 	name_map["jp"] = name_list[i+gap];
 	name_maps[name_list[i]] = name_map
 }
+
+JSON.stringify(name_maps,null,'\t')
